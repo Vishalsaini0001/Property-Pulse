@@ -1,17 +1,24 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-
+"use client";
+import PropertyCard from '@/components/PropertyCard';
+import properties from '@/properties.json'
 const propertiespage = () => {
-  const router = useRouter();
- 
-
   return (
-    <div>
-      <h1 className="text-3xl text-red-500">properties page</h1>
-     <Link href="/">Go to home page</Link>
-    </div>
-  )
-}
+    <section className="px-4 py-6">
+      <div className="container-xl lg:container m-auto px-4 py-6">
+       
+          {properties.length === 0 ? (
+            <center>No Properties Found!</center>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {properties.map((property) =>(
+          <PropertyCard key={property._id} property={property}/>
+         ))}
+        </div>
+          )}
+         
+      </div>
+    </section>
+  );
+};
 
 export default propertiespage;
