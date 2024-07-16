@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const pathname = usePathname();
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
