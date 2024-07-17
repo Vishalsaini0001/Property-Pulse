@@ -25,7 +25,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="rounded-xl shadow-lg relative transition-transform duration-300  hover:shadow-2xl">
       <Image
-        src={`/images/properties/${property.images[0]}`}
+        src={property.images[0]}
         alt=""
         width={0}
         height={0}

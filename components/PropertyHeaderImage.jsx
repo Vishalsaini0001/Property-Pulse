@@ -6,7 +6,7 @@ export const PropertyHeaderImage = ({ image }) => {
       <div className="container-xl m-auto">
         <div className="grid grid-cols-1">
           <Image
-            src={`/images/properties/${image}`}
+            src={image}
             height={0}
             width={0}
             sizes="100vw"
