@@ -3,6 +3,9 @@ import Image from 'next/image'
 import logo from '@/assets/images/logo.png'
 
 
+
+
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
   return (
@@ -12,6 +15,7 @@ const Footer = () => {
     >
       <div className="mb-4 md:mb-0">
         <Image src={logo} alt="Logo" className="h-8 w-auto" />
+       
       </div>
       <div
         className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0"
@@ -24,6 +28,7 @@ const Footer = () => {
         </p>
       </div>
     </div>
+    
   </footer>
   )
 }

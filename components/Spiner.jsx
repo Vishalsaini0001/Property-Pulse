@@ -1,4 +1,4 @@
-import Loader from "@/assets/styles/Loader.css";
+
 
 const Spiner = () => {
   return (
