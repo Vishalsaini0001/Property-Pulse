@@ -1,10 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
-import logo from '@/assets/images/logo.png'
-
-
-
-
+//import Image from 'next/image'
+//import logo from '@/assets/images/logo.png'
+import { BiLogoSlack } from "react-icons/bi";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -14,7 +11,8 @@ const Footer = () => {
       className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4"
     >
       <div className="mb-4 md:mb-0">
-        <Image src={logo} alt="Logo" className="h-8 w-auto" />
+        {/* <Image src={logo} alt="Logo" className="h-8 w-auto" /> */}
+        <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500"><BiLogoSlack className=''/></div>
        
       </div>
       <div

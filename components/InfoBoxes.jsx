@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const InfoBoxes = () => {
   return (
-    <section>
-    <div className="container-xl lg:container m-auto">
+    
+    <div className="container-xl lg:container m-auto ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-6 rounded-lg hover:shadow-xl shadow-lg">
           <h2 className="text-2xl font-bold">For Renters</h2>
           <p className="mt-2 mb-4">
             Find your dream rental property. Bookmark properties and contact
@@ -19,7 +19,7 @@ const InfoBoxes = () => {
             Browse Properties
           </Link>
         </div>
-        <div className="bg-blue-100 p-6 rounded-lg shadow-md">
+        <div className="bg-blue-100 p-6 rounded-lg hover:shadow-xl shadow-lg">
           <h2 className="text-2xl font-bold">For Property Owners</h2>
           <p className="mt-2 mb-4">
             List your properties and reach potential tenants. Rent as an
@@ -34,7 +34,7 @@ const InfoBoxes = () => {
         </div>
       </div>
     </div>
-  </section>
+  
   )
 }
 

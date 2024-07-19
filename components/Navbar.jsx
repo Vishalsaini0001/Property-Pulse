@@ -26,10 +26,10 @@ const Navbar = () => {
     };
     setAuthProviders();
   }, []);
-  
 
+ 
   return (
-    <nav className="bg-blue-700 sticky top-0 z-10">
+    <nav className="bg-blue-700 sticky top-0 z-10 hover:bg-white text-white hover:text-black cursor-pointer hover:border-b">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -64,9 +64,10 @@ const Navbar = () => {
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             {/* <!-- Logo --> */}
             <Link className="flex flex-shrink-0 items-center" href="/">
-              <Image className="h-10 w-auto" src={logo} alt="PropertyPulse" />
+              <Image className="h-10 w-auto " src={logo} alt="PropertyPulse" />
+              
 
-              <span className="hidden md:block text-white text-2xl font-bold ml-2 ">
+              <span className="hidden md:block  text-2xl font-bold ml-2 ">
                 PropertyPulse
               </span>
             </Link>
@@ -76,16 +77,16 @@ const Navbar = () => {
                 <Link
                   href="/"
                   className={`${
-                    pathname === "/" ? "bg-black" : ""
-                  } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/" ? "font-bold border-b-2" : ""
+                  }   hover:scale-105 hover:border-black  px-3 py-2 tracking-wider`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/properties"
                   className={`${
-                    pathname === "/properties" ? "bg-black" : ""
-                  } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/properties" ? "font-bold border-b-2" : ""
+                  }   hover:scale-105 hover:border-black  px-3 py-2 tracking-wider`}
                 >
                   Properties
                 </Link>
@@ -93,10 +94,12 @@ const Navbar = () => {
                   <Link
                     href="/properties/add"
                     className={`${
-                      pathname === "/properties/add" ? "bg-black" : ""
-                    } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                      pathname === "/properties/add"
+                        ? "font-bold border-b-2"
+                        : ""
+                    }    hover:scale-105 hover:border-black  px-3 py-2 tracking-wider`}
                   >
-                    Add Property
+                    Add Properties
                   </Link>
                 )}
               </div>
@@ -157,7 +160,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setProfileMenuOpen((prev) => !prev)}
                     type="button"
-                    className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:scale-105 transition"
                     id="user-menu-button"
                     aria-expanded="false"
                     aria-haspopup="true"
@@ -187,24 +190,24 @@ const Navbar = () => {
                   >
                     <Link
                       href="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:scale-105 hover:font-bold"
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-0"
-                      onClick={()=>{
-                        setProfileMenuOpen(false)
+                      onClick={() => {
+                        setProfileMenuOpen(false);
                       }}
                     >
                       Your Profile
                     </Link>
                     <Link
                       href="properties/saved"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:scale-105 hover:font-bold "
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
-                      onClick={()=>{
-                        setProfileMenuOpen(false)
+                      onClick={() => {
+                        setProfileMenuOpen(false);
                       }}
                     >
                       Saved Properties
@@ -214,7 +217,7 @@ const Navbar = () => {
                         setProfileMenuOpen(false);
                         signOut();
                       }}
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:scale-105 hover:font-bold"
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
@@ -235,6 +238,9 @@ const Navbar = () => {
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               href="/"
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}
               className={`${
                 pathname === "/" ? "bg-black" : ""
               } text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
@@ -243,6 +249,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="/properties"
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}
               className={`${
                 pathname === "/properties" ? "bg-black" : ""
               } text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
@@ -252,6 +261,9 @@ const Navbar = () => {
             {session && (
               <Link
                 href="/properties/add"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                }}
                 className={`${
                   pathname === "/properties/add" ? "bg-black" : ""
                 } text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
