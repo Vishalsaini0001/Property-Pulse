@@ -12,7 +12,7 @@ const Footer = () => {
     >
       <div className="mb-4 md:mb-0">
         {/* <Image src={logo} alt="Logo" className="h-8 w-auto" /> */}
-        <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500"><BiLogoSlack className=''/></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500"><BiLogoSlack className=''/></div>
        
       </div>
       <div

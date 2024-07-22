@@ -14,7 +14,7 @@ const UserSchema = new Schema(
     image: {
       type: String,
     },
-    bookmark: [
+    bookmarks: [
       {
         type: Schema.Types.ObjectId,
         ref: "property",
