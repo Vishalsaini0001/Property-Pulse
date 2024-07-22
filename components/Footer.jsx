@@ -1,6 +1,6 @@
 import React from 'react'
 //import Image from 'next/image'
-//import logo from '@/assets/images/logo.png'
+//import logo from '@/assets/images/footerLogo.jpg'
 import { BiLogoSlack } from "react-icons/bi";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
       className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4"
     >
       <div className="mb-4 md:mb-0">
-        {/* <Image src={logo} alt="Logo" className="h-8 w-auto" /> */}
+         {/* <Image src={logo} alt="Logo" className="h-8 w-auto" />  */}
         <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500"><BiLogoSlack className=''/></div>
        
       </div>

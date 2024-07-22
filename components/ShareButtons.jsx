@@ -3,7 +3,6 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
   EmailShareButton,
-  
   FacebookIcon,
   TwitterIcon,
   WhatsappIcon,
@@ -37,7 +36,7 @@ const ShareButtons = ({ property }) => {
         <WhatsappShareButton
           url={shareUrl}
           title={property.name}
-          separator='::'
+          separator="::"
         >
           <WhatsappIcon size={40} round={true} />
         </WhatsappShareButton>
