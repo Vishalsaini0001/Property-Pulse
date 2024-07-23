@@ -1,11 +1,20 @@
 import PropertyCard from "@/components/PropertyCard";
 import { fetchProperties } from "@/utils/Request";
+import PropertySearchForm from "@/components/PropertySearchForm";
 
 const propertiespage = async () => {
   const properties = await fetchProperties();
   properties.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+ 
   return (
-    <section className="px-4 py-6">
+    <>
+      <section className="bg-blue-700 py-4 border-t">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-start sm:px-6 lg:px-8">
+          <PropertySearchForm />
+        </div>
+      </section>
+      
+        <section className="px-4 py-6">
       <center className="text-blue-700 tracking-wider text-xl">
         Find your Perfect
       </center>
@@ -21,6 +30,8 @@ const propertiespage = async () => {
         )}
       </div>
     </section>
+     
+    </>
   );
 };
 
