@@ -10,7 +10,7 @@ const PropertyContactForm = ({ property }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
-  const [wasSubmitted, setWadSubmitted] = useState(false);
+  const [wasSubmitted, setWasSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +23,8 @@ const PropertyContactForm = ({ property }) => {
       recipient: property.owner,
       property: property._id,
     };
+   
+
     try {
       const res = await fetch("/api/messages", {
         method: "POST",
@@ -32,8 +34,8 @@ const PropertyContactForm = ({ property }) => {
         body: JSON.stringify(data),
       });
       if (res.status === 200) {
-        toast.success("Message Sent successfully!");
-        setWadSubmitted(true);
+        toast.success("Message sent successfully!");
+        setWasSubmitted(true);
       } else if (res.status === 400 || res.status === 401) {
         const dataObj = await res.json();
         toast.error(dataObj.message);
@@ -46,8 +48,8 @@ const PropertyContactForm = ({ property }) => {
     } finally {
       setName("");
       setEmail("");
-      setPhone("");
       setMessage("");
+      setPhone("");
     }
   };
 
