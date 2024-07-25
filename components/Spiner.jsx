@@ -1,5 +1,3 @@
-
-
 const Spiner = () => {
   return (
     <div className="flex items-center justify-center h-screen">
