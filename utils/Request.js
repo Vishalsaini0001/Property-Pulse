@@ -1,13 +1,16 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
 //fetch all the properties from database
-async function fetchProperties({showFeatured = false}={}) {
+async function fetchProperties({ showFeatured = false } = {}) {
   try {
     //if the domain not available return empty error rather then it throws error
-    if(!apiDomain){
-        return [];
+    if (!apiDomain) {
+      return [];
     }
-    const res = await fetch(`${apiDomain}/properties${showFeatured ? '/featured' : ''}`,{ cache: 'no-store'});
+    const res = await fetch(
+      `${apiDomain}/properties${showFeatured ? "/featured" : ""}`,
+      { cache: "no-store" }
+    );
 
     if (!res.ok) {
       throw new Error("failed to fetch data");
@@ -17,15 +20,15 @@ async function fetchProperties({showFeatured = false}={}) {
     console.log(error);
     return [];
   }
-} 
+}
 
 //fetch single propery from the database
 
 async function fetchProperty(id) {
   try {
     //if the domain not available return empty error rather then it throws error
-    if(!apiDomain){
-        return null;
+    if (!apiDomain) {
+      return null;
     }
     const res = await fetch(`${apiDomain}/properties/${id}`);
 
@@ -38,4 +41,4 @@ async function fetchProperty(id) {
     return null;
   }
 }
-export { fetchProperties , fetchProperty };
+export { fetchProperties, fetchProperty };
