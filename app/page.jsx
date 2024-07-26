@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import HomeProperties from "@/components/HomeProperties";
 import InfoBoxes from "@/components/InfoBoxes";
+import FeaturedProperties from "@/components/FeaturedProperties";
 
 
 const homePage =  () =>{
@@ -9,6 +10,7 @@ const homePage =  () =>{
    <>
    <Hero/>
    <InfoBoxes/>
+   <FeaturedProperties/>
    <HomeProperties/>
    
    </>
